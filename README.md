@@ -13,17 +13,17 @@ We expect our app to complete all the goals and objectives we have outlined in t
 We plan to use Python for the data scraping, preprocessing, and sentiment analysis. We plan to use React for the frontend component for the user to interact with. 
 
 20 * 3 = 60 Hours:
-Scraping Reddit posts/comments for relevant data: 6 Hours
-Scraping IMDb for corresponding movie data: 6 Hours
-Preprocessing of data (cleaning, lemmatization, tokenization) - 6 Hours
-Calculate sentiment analysis for each comment - 6 Hours
-Calculate average sentiment analysis for a movie - 6 Hours
-Store sentiment analysis for each comment into csv files to be displayed in frontend - 4 Hours
-Connect React frontend to the project - 3 Hours
-React
-Allow users to search for movies and display a list of movies with matching titles from dataset - 6 Hours
-Display calculated average sentiment score - 6 Hours
-Display comparison with IMDb ratings - 6 Hours
-Display chart showing sentiment over time - 6 Hours
+- Scraping Reddit posts/comments for relevant data: 6 Hours
+- Scraping IMDb for corresponding movie data: 6 Hours
+- Preprocessing of data (cleaning, lemmatization, tokenization) - 6 Hours
+- Calculate sentiment analysis for each comment - 6 Hours
+- Calculate average sentiment analysis for a movie - 6 Hours
+- Store sentiment analysis for each comment into csv files to be displayed in frontend - 4 Hours
+- Connect React frontend to the project - 3 Hours
+- React
+  - Allow users to search for movies and display a list of movies with matching titles from dataset - 6 Hours
+  - Display calculated average sentiment score - 6 Hours
+  - Display comparison with IMDb ratings - 6 Hours
+  - Display chart showing sentiment over time - 6 Hours
 
 
