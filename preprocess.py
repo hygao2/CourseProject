@@ -26,21 +26,21 @@ data["body"] = data['body'].str.replace("[0-9]+", " ")
 data["title_cleaned"] = data['title_cleaned'].str.replace("[0-9]+", " ")
 
 # lowercase
-for index, row in data.iterrows():
-    row['body'] = (str(row['body']).lower())
-    row['title_cleaned'] = (str(row['title_cleaned']).lower())
-    # remove short words
-    row["body"] = ' '.join([w for w in row['body'].split() if len(w) > 2])
-    row["title_cleaned"] = ' '.join([w for w in row['title_cleaned'].split() if len(w) > 2])
-
-    # stemmer
-    row['body'] = ' '.join([stemmer.stem(w) for w in row['body'].split()])
-    row['title_cleaned'] = ' '.join([stemmer.stem(w) for w in row['title_cleaned'].split()])
-
-    # lemmatizer
-
-    data['body'] = row['body']
-    data['title_cleaned'] = row['title_cleaned']
+# for index, row in data.iterrows():
+#     row['body'] = (str(row['body']).lower())
+#     row['title_cleaned'] = (str(row['title_cleaned']).lower())
+#     # remove short words
+#     row["body"] = ' '.join([w for w in row['body'].split() if len(w) > 2])
+#     row["title_cleaned"] = ' '.join([w for w in row['title_cleaned'].split() if len(w) > 2])
+#
+#     # stemmer
+#     row['body'] = ' '.join([stemmer.stem(w) for w in row['body'].split()])
+#     row['title_cleaned'] = ' '.join([stemmer.stem(w) for w in row['title_cleaned'].split()])
+#
+#     # lemmatizer
+#
+#     data['body'] = row['body']
+#     data['title_cleaned'] = row['title_cleaned']
 
 #
 # data.dropna(subset=["text"], inplace=True)
