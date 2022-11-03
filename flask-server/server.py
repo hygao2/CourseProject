@@ -1,7 +1,18 @@
-from flask import Flask, jsonify
-  
-  
-# Initializing flask app
+from flask import Flask
+from flask import jsonify
+from flask import request
+import pandas as pd
+app = Flask(__name__)
+
+
+@app.route('/movies/<string:name>', methods=['GET'])
+def returnRating(name):
+    df = pd.read_csv("IMDbRating.csv")
+    return df.loc[df['Title'] == name]['Rating'].to_string()[-3:]
+    
+
+
+
 app = Flask(__name__)
   
   
