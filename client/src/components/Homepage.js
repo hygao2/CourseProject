@@ -1,35 +1,40 @@
 import React, { useEffect, useState } from "react";
+import "./Homepage.css";
 
 function Homepage() {
   const [name, setName] = useState("");
-  const [rating, setRating] = useState(0);
+  const [result, setResult] = useState({
+    movie_name: "",
+    movie_sentiment: 0,
+    rating: 0,
+  });
+  const [isSearchSuccessful, setIsSearchSuccessful] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const getImdbScore = () => {
-    fetch(`/movie/` + name + `/rating`).then((res) =>
-      res.json().then((data) => {
-        console.log(data);
+  const searchHandler = (event) => {
+    event.preventDefault();
+    setIsLoading(true);
+    setIsSearchSuccessful(false);
 
-        // Setting a data from api
-        setRating(data.rating);
-      })
-    );
-  };
-
-  const searchHandler = () => {
     fetch(`/movie/` + name).then((res) =>
       res.json().then((data) => {
         console.log(data);
 
         // Setting a data from api
-        setName(data.movie_name);
+        setIsLoading(false);
+        setResult({
+          movie_name: data.movie_name,
+          movie_sentiment: data.movie_sentiment,
+          rating: data.rating,
+        });
+        setIsSearchSuccessful(true);
       })
     );
   };
 
   return (
-    <div>
-      <h1>Movie Sentiment Analysis</h1>
-
+    <div className="wrapper">
+      <div className="header">Movie Sentiment Analysis</div>
       <form>
         <label htmlFor="name_input">Enter a movie name: </label>
         <input
@@ -37,14 +42,20 @@ function Homepage() {
           id="name_input"
           onChange={(e) => setName(e.target.value)}
         ></input>
-        <button type="button" onClick={getImdbScore}>
+        <button type="button" onClick={searchHandler}>
           Search
         </button>
       </form>
 
-      <p>You searched for:</p>
-      <p>{name}</p>
-      <p>With IMDB rating: {rating}</p>
+      {isLoading && <div>Loading...</div>}
+
+      {isSearchSuccessful && (
+        <div className="results">
+          <p>You searched for: {result.movie_name}</p>
+          <p>This movie has an IMDB rating of: {result.rating}</p>
+          <p>This movie has an average sentiment of: {result.movie_sentiment}</p>
+        </div>
+      )}
     </div>
   );
 }

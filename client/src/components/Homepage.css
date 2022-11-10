@@ -1,0 +1,32 @@
+.wrapper {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  background-color: rgb(172, 36, 36);
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+input {
+  padding: 5px;
+}
+
+button {
+  margin-left: 5px;
+  padding: 5px;
+  border: 1px solid #b6cde3;
+  border-radius: 5px;
+}
+
+.results {
+  margin-top: 10px;
+  border: 1px solid #b6cde3;
+  margin-left: 30%;
+  margin-right: 30%;
+  border-radius: 10px;
+}

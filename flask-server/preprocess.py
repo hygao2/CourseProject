@@ -54,3 +54,8 @@ def preprocess():
         data.at[index, 'compound'] = sia.polarity_scores(row['body'])['compound']
 
     data.to_csv(index=False, path_or_buf="../reddit_data/cleaned_reddit_comments.csv")
+
+
+def calculate_avg_sentiment():
+    data = pd.read_csv('../reddit_data/cleaned_reddit_comments.csv')
+    return np.mean(data['compound'])
