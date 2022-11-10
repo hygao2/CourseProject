@@ -10,9 +10,11 @@
 2) Which tasks are pending? 
 - Display the calculated average sentiment of the movie on frontend
 - Display comparison with IMDb ratings
+- Display an analysis of the calculated average sentiment
 - Display chart that plots the sentiment of the movie over time based on posts/comments
 - Making the UI more user friendly/intuitive
 - Add a loading functionality after user submits movie title request
+- Display top 5 posts/comments with the strongest sentiment score
 
 3) Are you facing any challenges? 
 - not so far
