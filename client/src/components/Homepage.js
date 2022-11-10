@@ -2,17 +2,26 @@ import React, { useEffect, useState } from "react";
 
 function Homepage() {
   const [name, setName] = useState("");
-  const [returnVal, setReturnVal] = useState({
-    movie_name: "",
-  });
+  const [rating, setRating] = useState(0);
+
+  const getImdbScore = () => {
+    fetch(`/movie/` + name + `/rating`).then((res) =>
+      res.json().then((data) => {
+        console.log(data);
+
+        // Setting a data from api
+        setRating(data.rating);
+      })
+    );
+  };
 
   const searchHandler = () => {
     fetch(`/movie/` + name).then((res) =>
       res.json().then((data) => {
         console.log(data);
-        
+
         // Setting a data from api
-        setReturnVal({ movie_name: data.movie_name });
+        setName(data.movie_name);
       })
     );
   };
@@ -28,12 +37,14 @@ function Homepage() {
           id="name_input"
           onChange={(e) => setName(e.target.value)}
         ></input>
-        <button type="button" onClick={searchHandler}>
+        <button type="button" onClick={getImdbScore}>
           Search
         </button>
       </form>
 
-      <p>You searched for: {returnVal.movie_name}</p>
+      <p>You searched for:</p>
+      <p>{name}</p>
+      <p>With IMDB rating: {rating}</p>
     </div>
   );
 }
