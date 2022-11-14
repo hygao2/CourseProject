@@ -1,4 +1,5 @@
 1) Which tasks have been completed?
+
 The tasks that have been completed so far are being able to extract/scrape reddit posts/ IMDb critics rating. We have also finished cleaning the data and can run the prepreocessed data through sentiment analysis. We also connected our react frontend to flask backend. 
 
 **scraping**
