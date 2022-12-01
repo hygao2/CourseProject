@@ -26,7 +26,19 @@ button {
 .results {
   margin-top: 10px;
   border: 1px solid #b6cde3;
-  margin-left: 30%;
-  margin-right: 30%;
+  margin-left: 10%;
+  margin-right: 10%;
   border-radius: 10px;
+}
+
+.loading {
+  margin-top: 10px;
+  font-size: 20px;
+  font-style: italic;
+}
+
+.chart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
