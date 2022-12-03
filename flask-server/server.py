@@ -43,13 +43,21 @@ def get_movie(name):
     imdb_df = pd.read_csv("IMDbRating.csv")
     rating = imdb_df.loc[imdb_df['Title'] == name]['Rating'].to_string()[-3:]
 
+    compound = cleaned_df['compound']
+    created = cleaned_df['created']
+
     # Returning an api for showing in  reactjs
-    return {"movie_name" : name, 
-            "movie_sentiment" : avg_sentiment, 
-            "rating" : rating,
-            "top_five_comments" : top_five_comments,
-            "sentiment_classification" : sentiment_classification}
-  
+    return {"movie_name": name,
+            "movie_sentiment": avg_sentiment,
+            "rating": rating,
+            "top_five_comments": top_five_comments,
+            "sentiment_classification": sentiment_classification,
+            "created_at": created,
+            "compound_score": compound,
+
+            }
+
+
 # Running app
 if __name__ == '__main__':
     app.run(debug=True)
