@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Chart from "react-apexcharts";
-
 import "./Homepage.css";
 
 function Homepage() {
@@ -24,7 +23,6 @@ function Homepage() {
       },
     ],
   });
-
   const [options, setOptions] = useState({
     xaxis: {
       categories: [],
@@ -52,9 +50,11 @@ function Homepage() {
         });
         setIsSearchSuccessful(true);
 
-        const dates = data.created_at.map((secs) =>
-          new Date(secs * 1000).toDateString()
+        var dates = getDaysArray(
+          new Date("2022-03-11"),
+          new Date("2022-11-01")
         );
+
         setSeries({
           series: [
             {
@@ -71,6 +71,17 @@ function Homepage() {
         });
       })
     );
+  };
+
+  const getDaysArray = (start, end) => {
+    for (
+      var arr = [], dt = new Date(start);
+      dt <= new Date(end);
+      dt.setDate(dt.getDate() + 1)
+    ) {
+      arr.push(new Date(dt).toDateString());
+    }
+    return arr;
   };
 
   return (
