@@ -27,7 +27,7 @@ We plan to use Python for the data scraping, preprocessing, and sentiment analys
   - Display chart showing sentiment over time - 6 Hours
 
 
-Documentation
+**Documentation**
 1) An overview of the function of the code (i.e., what it does and what it can be used for). 
 Our project allows a user to input a movie title they are interested in to understand people’s average sentiments of the movie (reddit). 
 
